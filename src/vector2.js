@@ -1,13 +1,43 @@
 
 //x and y are optional, default to 0
 function Vector2(x, y) {
-    this.x = x || 0;
-    this.y = y || 0;
-    return this;
+    var _x = x;
+    var _y = y;    
+    this.isEqual = function(vector){
+        return _x === vector.x && _y === vector.y;
+    };
+    
+    this.setLength = function(len) {
+        if(_x === 0 && _y === 0) return null;
+        var s = Math.pow(_x,2)+Math.pow(_y,2);
+        s = 1.0 / Math.sqrt(s) * len;
+        _x *= s;
+        _y *= s;
+        return this;
+    };
+    
+    this.normalize = function() {
+        return this.setLength(1);
+    };
+    
+    Object.defineProperties(this, {
+            "x": {
+            get: function() {return _x;},
+            set: function(val) { _x=val;}, 
+            },
+            "y": {
+            get: function() {return _y;},
+            set: function(val) {_y = val;}
+            },
+            "angle": {
+            get: 
+            },
+        });
 }
 
+/*
 //sets vector value of vector v
-Vector2.prototype.equals = function(v) {
+Vector2.prototype.equals = function(vector) {
 	this.x = v.x;
 	this.y = v.y;
 	return this;
@@ -69,3 +99,5 @@ Vector2.radToDeg = function(rad) {
 Vector2.dotProduct = function(v1, v2) {
 	return v1.x * v2.x + v1.y * v2.y;
 }
+
+*/

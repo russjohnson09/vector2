@@ -8,11 +8,13 @@ test("creation", function() {
 
 test("functions", function() {
     var v = new Vector2(2,2);
+    v.isEqual(v);
     v.normalize();
     ok(v.x == 1/Math.sqrt(2));
     ok(v.x == 1/Math.sqrt(2));
-    v.setXY(1,1);
-    var angle = v.getAngle();
+    v.x = 1;
+    v.y = 1;
+    var angle = v.angle;
     ok(angle == Math.PI/4);
     var deg = Vector2.radToDeg(angle)
     ok(deg == 45);
