@@ -3,6 +3,7 @@
 function Vector2(x, y) {
     this.x = x || 0;
     this.y = y || 0;
+    return this;
 }
 
 //sets vector value of vector v
@@ -23,6 +24,7 @@ Vector2.prototype.isEqualTo = function(v) {
 Vector2.prototype.setXY = function(x,y) {
     this.x = x;
     this.y = y;
+    return this;
 }
 
 Vector2.prototype.isEqualToXY = function(x, y) {
@@ -30,7 +32,7 @@ Vector2.prototype.isEqualToXY = function(x, y) {
 }
 
 Vector2.prototype.normalize = function() {
-    this.setLength(1);
+    return this.setLength(1);
 }
 
 Vector2.prototype.getLength = function() {
@@ -43,6 +45,7 @@ Vector2.prototype.setLength = function(len) {
 	s = 1.0 / Math.sqrt(s) * len;
 	this.x *= s;
 	this.y *= s;
+	return this;
 }
 
 Vector2.prototype.getAngle = function() {
@@ -56,6 +59,7 @@ Vector2.prototype.getAngleDeg = function() {
 Vector2.prototype.setAngle = function(a) {
 	this.x = Math.cos(a);
 	this.y = Math.sin(a);
+	return this;
 }
 
 Vector2.radToDeg = function(rad) {
