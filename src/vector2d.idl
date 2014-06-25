@@ -1,0 +1,15 @@
+[Constructor(double x, double y)]
+interface Vector2 {
+    attribute double x;
+    attribute double y;
+    readonly attribute double radians;
+    readonly 
+    boolean isEqual(Vector2 vector);
+    Vector2d add(Vector2 vector);
+    double dotProduct(Vector2 vector);
+};
+
+interface utils {
+    double degreesToRadians(double degrees);
+    double radiansToDegrees(double radians);
+};
