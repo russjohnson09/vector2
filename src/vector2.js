@@ -1,4 +1,4 @@
-var vector = {}; //declare vector as namespace
+var vector = {}; //declare vector as namespace //http://en.wikipedia.org/wiki/Vector_calculus
 vector.Vector2 = function(x, y) {
     var _x = x;
     var _y = y;    
@@ -11,6 +11,14 @@ vector.Vector2 = function(x, y) {
     };
     
     this.add = function(vector) {
+        _x += vector.x;
+        _y += vector.y;
+        return this;
+    };
+    
+    this.scalar = function(a) {
+        _x *= a;
+        _y *= a;
         return this;
     };
     

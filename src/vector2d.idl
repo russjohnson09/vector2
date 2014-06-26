@@ -5,7 +5,8 @@ interface Vector2 {
     readonly attribute double radians;
     readonly 
     boolean isEqual(Vector2 vector);
-    Vector2d add(Vector2 vector);
+    Vector2 add(Vector2 vector);
+    Vecotr2 scalar(double a);
     double dotProduct(Vector2 vector);
 };
 
@@ -13,3 +14,23 @@ interface utils {
     double degreesToRadians(double degrees);
     double radiansToDegrees(double radians);
 };
+
+
+//simulate a particle in 2d
+
+interface Particle2 {
+    attribute double delay; //delay between ticks in milliseconds
+    attribute Vector2 position;
+    attribute Vector2 velocity;
+    attribute Vector2 acceleration;
+    attribute ApproxType approxType;
+    void tick();
+};
+
+//it is required that the method used for approximating the position is given.
+enum ApproxType {
+    "euler","runge"
+};
+
+an implementation of Particle2 must take into account the delay when calculating a particles new position.
+Delay is to be given in milliseconds, while velocity is in untis/second and acceleartion in units/second squared.
