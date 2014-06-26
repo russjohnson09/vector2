@@ -1,0 +1,29 @@
+interface Draw {
+    attribute boolean isDebug;
+    attribute Context ctx;
+    attribute Drawable[] drawObjects;
+    void draw();
+};
+
+
+interface World {
+    attribute isDebug;
+    attribute Draw? draw;
+    attribute Particle[] particles;
+    attribute delay();
+    void addParticle();
+    void tick();
+};
+
+interface Drawable {
+    attribute double radius;
+    attribute Vector2 position;
+    attribute Options options;
+};
+
+dictionary Options {
+    string fillStyle = "black";
+}
+
+
+particles have a radius 

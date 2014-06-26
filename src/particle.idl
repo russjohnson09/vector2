@@ -1,0 +1,9 @@
+interface Particle {
+    attribute Vector2 position;
+    attribute Vector2 velocity;
+    attribute Vector2 acceleration;
+    attribute Vector2 delay;
+    void tick();
+};
+
+for my purposes a particle is simply a circle with a radius that has a radius, position, acceleration, and velocity. Also a delay that is required when calculating the new position/velocity vectors for each tick. Longer delays between ticks will give less accurate positions.
